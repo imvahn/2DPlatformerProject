@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb2d;
     public float jumpForce;
     private SpriteRenderer spriteRenderer;
-    public float raycastLength = 0.4f;
+    private float raycastLength = 0.85f;
     public LayerMask platformLayerMask;
     private bool isGrounded;
 
@@ -30,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
         if (groundCheckHit.collider != null)
         {
             isGrounded = true;
+            
         }
         else
         {
