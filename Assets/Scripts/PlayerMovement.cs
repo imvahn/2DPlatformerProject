@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     private float raycastLength = 0.85f;
     public LayerMask platformLayerMask;
     private bool isGrounded;
+    public Animator animator;
 
     // Start is called before the first frame update
     void Start()
