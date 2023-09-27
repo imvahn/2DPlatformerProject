@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -14,12 +15,14 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask platformLayerMask;
     private bool isGrounded;
     public Animator animator;
+    private int jumpCount;
 
     // Start is called before the first frame update
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        jumpCount = 0;
     }
 
     // Update is called once per frame
@@ -46,10 +49,16 @@ public class PlayerMovement : MonoBehaviour
             if (isGrounded)
             {
                 vel.y = jumpForce;
+
+                animator.SetBool("isJumping", true);
             }
         }
         vel.x = Input.GetAxis("Horizontal") * speed;
         rb2d.velocity = vel;
+
+        // Animator logic
+
+        animator.SetFloat("SpeedX", Math.Abs(vel.x));
 
         // Flip X depending on which direction the player is moving
 

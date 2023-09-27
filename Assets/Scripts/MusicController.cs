@@ -27,6 +27,6 @@ public class MusicController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if player.GetInstrument() != piano { current = player.GetInstrument() }
+        //if player.GetInstrument() != piano { current = player.GetInstrument() } //commented this out because it was preventing me from running anything
     }
 }
