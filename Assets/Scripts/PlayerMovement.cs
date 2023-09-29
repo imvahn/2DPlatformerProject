@@ -62,11 +62,11 @@ public class PlayerMovement : MonoBehaviour
 
         // Flip X depending on which direction the player is moving
 
-        if (vel.x > 0.01)
+        if (vel.x > 0)
         {
             spriteRenderer.flipX = false;
         }
-        else if (vel.x < -0.01)
+        else if (vel.x < 0)
         {
             spriteRenderer.flipX = true;
         }
