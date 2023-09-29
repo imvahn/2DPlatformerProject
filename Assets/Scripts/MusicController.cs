@@ -13,7 +13,7 @@ public class MusicController : MonoBehaviour
     public AudioClip pianoMusic;
     public AudioClip fluteMusic;
 
-    public PlayerInstrument player;
+    private PlayerInstrument player;
     AudioClip current;
 
     // Start is called before the first frame update
