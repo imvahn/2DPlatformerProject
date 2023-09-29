@@ -57,7 +57,14 @@ public class PlayerMovement : MonoBehaviour
 
         // Animator logic
 
-        animator.SetFloat("SpeedX",Math.Abs(vel.x));
+        if (Mathf.Abs(vel.x) > 0.01 && isGrounded)
+        {
+            animator.SetBool("isRunning", true);
+        }
+        else
+        {
+            animator.SetBool("isRunning", false);
+        }
 
         // Flip X depending on which direction the player is moving
 
