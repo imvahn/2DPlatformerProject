@@ -7,11 +7,10 @@ public class PlayerInstrument : MonoBehaviour
     // Start is called before the first frame update
 
     Instrument currentInstrument;
-    public Instrument instrument;
     
     void Start()
     {
-        currentInstrument = instrument.piano;
+        currentInstrument = Instrument.piano;
     }
 
     // Update is called once per frame
@@ -20,7 +19,7 @@ public class PlayerInstrument : MonoBehaviour
      
     }
 
-    Instrument GetInsrument()
+    public Instrument GetInstrument()
     {
         return currentInstrument;
     }
