@@ -13,16 +13,18 @@ public class PlayerMovement : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private float raycastLength = 0.85f;
     public LayerMask platformLayerMask;
-    private bool isGrounded;
+    public bool isGrounded;
     public Animator animator;
-    private int jumpCount;
+    public float bendTime;
+    public float jumpTime;
 
     // Start is called before the first frame update
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        jumpCount = 0;
+        bendTime = 0.333f;
+        jumpTime = 0.1f;
     }
 
     // Update is called once per frame
@@ -34,7 +36,6 @@ public class PlayerMovement : MonoBehaviour
         if (groundCheckHit.collider != null)
         {
             isGrounded = true;
-            
         }
         else
         {
@@ -48,10 +49,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (isGrounded)
             {
-                vel.y = jumpForce;
-
-                animator.SetBool("isJumping", true);
-                jumpCount++;
+                StartCoroutine(Jumping());
             }
         }
         vel.x = Input.GetAxis("Horizontal") * speed;
@@ -59,7 +57,22 @@ public class PlayerMovement : MonoBehaviour
 
         // Animator logic
 
-        animator.SetFloat("SpeedX", Math.Abs(vel.x));
+        animator.SetFloat("SpeedX",Math.Abs(vel.x));
+        animator.SetFloat("VelY", vel.y);
+
+        //if (vel.y > 0)
+        //{
+        //    animator.SetBool("isJumpUp", true);
+        //}
+        //else if (vel.y < 0)
+        //{
+        //    animator.SetBool("isJumpDown", true);
+        //}
+        //else
+        //{
+        //    animator.SetBool("isJumpUp", false);
+        //    animator.SetBool("isJumpDown", false);
+        //}
 
         // Flip X depending on which direction the player is moving
 
@@ -78,5 +91,18 @@ public class PlayerMovement : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
+    }
+
+    IEnumerator Jumping()
+    {
+        animator.SetBool("isW", true);
+        yield return new WaitForSeconds(bendTime);
+        rb2d.velocity = new Vector2(rb2d.velocity.x, jumpForce);
+        yield return new WaitUntil(() => rb2d.velocity.y < -0.01f);
+        animator.SetBool("isW", false);
+        animator.SetBool("isFalling", true);
+        yield return new WaitUntil(() => rb2d.velocity.y > -0.01f);
+        animator.SetBool("isFalling", false);
+        yield break;
     }
 }
