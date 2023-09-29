@@ -58,21 +58,6 @@ public class PlayerMovement : MonoBehaviour
         // Animator logic
 
         animator.SetFloat("SpeedX",Math.Abs(vel.x));
-        animator.SetFloat("VelY", vel.y);
-
-        //if (vel.y > 0)
-        //{
-        //    animator.SetBool("isJumpUp", true);
-        //}
-        //else if (vel.y < 0)
-        //{
-        //    animator.SetBool("isJumpDown", true);
-        //}
-        //else
-        //{
-        //    animator.SetBool("isJumpUp", false);
-        //    animator.SetBool("isJumpDown", false);
-        //}
 
         // Flip X depending on which direction the player is moving
 
