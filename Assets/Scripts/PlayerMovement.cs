@@ -51,6 +51,7 @@ public class PlayerMovement : MonoBehaviour
                 vel.y = jumpForce;
 
                 animator.SetBool("isJumping", true);
+                jumpCount++;
             }
         }
         vel.x = Input.GetAxis("Horizontal") * speed;
