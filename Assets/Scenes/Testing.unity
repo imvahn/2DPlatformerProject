@@ -424,6 +424,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7638919101484642094, guid: b8772d1169e1a45e3b5a2b29e0fcafbd, type: 3}
+      propertyPath: pinkGuy
+      value: 
+      objectReference: {fileID: 965541655, guid: 22e83f0bb3c3140d88e7404d5fd411c0, type: 3}
+    - target: {fileID: 7638919101484642094, guid: b8772d1169e1a45e3b5a2b29e0fcafbd, type: 3}
       propertyPath: animator
       value: 
       objectReference: {fileID: 1925406828}
@@ -438,6 +442,10 @@ PrefabInstance:
     - target: {fileID: 7638919101484642094, guid: b8772d1169e1a45e3b5a2b29e0fcafbd, type: 3}
       propertyPath: jumpForce
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7638919101484642094, guid: b8772d1169e1a45e3b5a2b29e0fcafbd, type: 3}
+      propertyPath: raycastLength
+      value: 0.83
       objectReference: {fileID: 0}
     - target: {fileID: 7638919101484642094, guid: b8772d1169e1a45e3b5a2b29e0fcafbd, type: 3}
       propertyPath: onLand.m_PersistentCalls.m_Calls.Array.size

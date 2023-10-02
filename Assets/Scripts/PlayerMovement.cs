@@ -11,12 +11,14 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb2d;
     public float jumpForce;
     private SpriteRenderer spriteRenderer;
-    private float raycastLength = 0.85f;
+    public float raycastLength = 0.84f;
     public LayerMask platformLayerMask;
     public bool isGrounded;
+    public bool isRunning;
     public Animator animator;
     public float bendTime;
     public float jumpTime;
+    public Sprite pinkGuy;
 
     // Start is called before the first frame update
     void Start()
@@ -59,13 +61,30 @@ public class PlayerMovement : MonoBehaviour
 
         if (Mathf.Abs(vel.x) > 0.01 && isGrounded)
         {
-            animator.SetBool("isRunning", true);
+            isRunning = true;
         }
         else
         {
-            animator.SetBool("isRunning", false);
+            isRunning = false;
         }
 
+        if (isRunning && isGrounded)
+        {
+            animator.SetBool("isWalking", true);
+        }
+        else if (isRunning && !isGrounded)
+        {
+            animator.SetBool("isWalking", false);
+        }
+        else if (!isRunning && isGrounded)
+        {
+            animator.SetBool("isWalking", false);
+        }
+        else
+        {
+            animator.SetBool("isWalking", false);
+        }
+        
         // Flip X depending on which direction the player is moving
 
         if (vel.x > 0)
