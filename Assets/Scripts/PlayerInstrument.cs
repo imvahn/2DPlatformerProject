@@ -11,8 +11,6 @@ public class PlayerInstrument : MonoBehaviour
     Instrument currentInstrument;
     static List<Instrument> inventory = new List<Instrument>(new Instrument[4]);
 
-    public TMP_Text text;
-
     void Start()
     {
         // starting instrument is currently piano
@@ -23,10 +21,6 @@ public class PlayerInstrument : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (inventory[3] == "drums")
-        {
-            text.text = "IT WORKS";
-        }
        // if player picks up new isntrument: add to list,
        // if player swaps instrument, change currentInstrument
 
