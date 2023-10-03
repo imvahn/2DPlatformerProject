@@ -34,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
         bendTime = 0.333f;
         jumpTime = 0.1f;
         isPaused = false;
+        pauseMenu.SetActive(false);
     }
 
     // Update is called once per frame
