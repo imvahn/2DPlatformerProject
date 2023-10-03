@@ -1,25 +1,31 @@
-using JetBrains.Annotations;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Instrument : MonoBehaviour
 {
-    private string instrumentName;
+    public static Instrument Piano { get; private set; }
+    public static Instrument Drums { get; private set; }
+    public static Instrument Flute { get; private set; }
+    public static Instrument Guitar { get; private set; }
 
-    public static readonly Instrument piano = new Instrument("piano");
-    public static readonly Instrument drums = new Instrument("drums");
-    public static readonly Instrument flute = new Instrument("flute");
-    public static readonly Instrument guitar = new Instrument("guitar");
+    private string instrumentString;
 
-    private Instrument(string name)
+    private void Awake()
     {
-        instrumentName = name;
+        // Initialize the instruments with appropriate values
+        Piano = new Instrument("Piano");
+        Drums = new Instrument("Drums");
+        Flute = new Instrument("Flute");
+        Guitar = new Instrument("Guitar");
     }
 
+    private Instrument(string s)
+    {
+        instrumentString = s;
+    }
+    
     public override string ToString()
     {
-        return instrumentName;
+        return instrumentString;
     }
 
     public static bool operator ==(Instrument instrument, string instrumentString)
@@ -30,7 +36,7 @@ public class Instrument : MonoBehaviour
         if (ReferenceEquals(instrument, null) || instrumentString == null)
             return false;
 
-        return instrument.instrumentName == instrumentString;
+        return instrument.instrumentString == instrumentString;
     }
 
     public static bool operator !=(Instrument instrument, string instrumentString)
@@ -44,12 +50,11 @@ public class Instrument : MonoBehaviour
             return false;
 
         Instrument other = (Instrument)obj;
-        return instrumentName == other.instrumentName;
+        return instrumentString == other.instrumentString;
     }
 
     public override int GetHashCode()
     {
-        return instrumentName.GetHashCode();
+        return instrumentString.GetHashCode();
     }
 }
-

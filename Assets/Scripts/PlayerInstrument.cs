@@ -10,12 +10,13 @@ public class PlayerInstrument : MonoBehaviour
 
     Instrument currentInstrument;
     static List<Instrument> inventory = new List<Instrument>(new Instrument[4]);
+    static bool pickingUp = false;
 
     void Start()
     {
         // starting instrument is currently piano
-        currentInstrument = Instrument.piano;
-       // inventory[0] = Instrument.piano;
+        currentInstrument = Instrument.Piano;
+        inventory[0] = Instrument.Piano;
     }
 
     // Update is called once per frame
@@ -28,6 +29,7 @@ public class PlayerInstrument : MonoBehaviour
         //inventory[1] is guitar    (2)
         //inventory[2] is flute     (3)
         //inventory[3] is drums     (4)
+
        if (Input.GetKeyDown(KeyCode.Alpha1) && inventory[0] != null)
        {
             currentInstrument = inventory[0];
@@ -59,21 +61,22 @@ public class PlayerInstrument : MonoBehaviour
     {
         if (collision.CompareTag("instrument")) //this can be changed later since comparing with tags is terrible
         {
+            pickingUp = true;
             if (collision.name == "piano")
             {
-                inventory[0] = Instrument.piano;
+                inventory[0] = Instrument.Piano;
             }
             if (collision.name == "guitar")
             {
-                inventory[1] = Instrument.guitar;
+                inventory[1] = Instrument.Guitar;
             }
             if (collision.name == "flute")
             {
-                inventory[2] = Instrument.flute;
+                inventory[2] = Instrument.Flute;
             }
             if (collision.name == "drums")
             {
-                inventory[3] = Instrument.drums;
+                inventory[3] = Instrument.Drums;
             }
             Destroy(collision.gameObject);
         }
