@@ -3,12 +3,11 @@ using UnityEngine;
 
 public class PlayerInstrument : MonoBehaviour
 {
-    // Start is called before the first frame update
-
     Instrument currentInstrument;
-    static List<Instrument> inventory = new List<Instrument>(new Instrument[4]);
-    static bool pickingUp = false;
+    public readonly static List<Instrument> inventory = new(new Instrument[4]);
+    public static bool pickingUp = false;
 
+    // Start is called before the first frame update
     void Start()
     {
         // starting instrument is currently piano
