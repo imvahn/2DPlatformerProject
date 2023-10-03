@@ -112,7 +112,7 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitUntil(() => rb2d.velocity.y < -0.01f);
         animator.SetBool("isW", false);
         animator.SetBool("isFalling", true);
-        yield return new WaitUntil(() => rb2d.velocity.y > 0);
+        yield return new WaitUntil(() => rb2d.velocity.y > -0.01f);
         animator.SetBool("isFalling", false);
         yield break;
     }
