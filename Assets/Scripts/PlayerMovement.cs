@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
 
     public Animator animator;
     public Sprite pinkGuy;
+    public GameObject pauseMenu;
 
     public LayerMask platformLayerMask;
 
@@ -40,9 +41,10 @@ public class PlayerMovement : MonoBehaviour
     {
 
         // Check if the game is paused (player pressed escape)
-        if (Input.GetKey(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             isPaused = !isPaused;
+            pauseMenu.SetActive(isPaused);
         }
 
         // Check if the player is grounded, update isGrounded
