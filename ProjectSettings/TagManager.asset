@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Platform
+  - instrument
   layers:
   - Default
   - TransparentFX

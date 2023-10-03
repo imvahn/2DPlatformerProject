@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -9,8 +10,7 @@ public class PlayerInstrument : MonoBehaviour
 
     Instrument currentInstrument;
     static List<Instrument> inventory = new List<Instrument>(new Instrument[4]);
-
-
+    
     void Start()
     {
         // starting instrument is currently piano
