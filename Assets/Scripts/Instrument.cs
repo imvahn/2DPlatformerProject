@@ -5,36 +5,51 @@ using UnityEngine;
 
 public class Instrument : MonoBehaviour
 {
-    public static Instrument piano;
-    public static Instrument drums;
-    public static Instrument flute;
-    public static Instrument guitar;
+    private string instrumentName;
 
+    public static readonly Instrument piano = new Instrument("piano");
+    public static readonly Instrument drums = new Instrument("drums");
+    public static readonly Instrument flute = new Instrument("flute");
+    public static readonly Instrument guitar = new Instrument("guitar");
 
-    public Instrument() { }
-
-    public override bool Equals(object other)
+    private Instrument(string name)
     {
-        return base.Equals(other);
-    }
-
-    public override int GetHashCode()
-    {
-        return base.GetHashCode();
+        instrumentName = name;
     }
 
     public override string ToString()
     {
-        return base.ToString();
+        return instrumentName;
     }
 
-    public static Instrument operator ==(Instrument a, Instrument b)
+    public static bool operator ==(Instrument instrument, string instrumentString)
     {
-        return a == b;
+        if (ReferenceEquals(instrument, null) && instrumentString == null)
+            return true;
+
+        if (ReferenceEquals(instrument, null) || instrumentString == null)
+            return false;
+
+        return instrument.instrumentName == instrumentString;
     }
 
-    public static Instrument operator !=(Instrument a, Instrument b)
+    public static bool operator !=(Instrument instrument, string instrumentString)
     {
-        return (a != b);
+        return !(instrument == instrumentString);
+    }
+
+    public override bool Equals(object obj)
+    {
+        if (obj == null || GetType() != obj.GetType())
+            return false;
+
+        Instrument other = (Instrument)obj;
+        return instrumentName == other.instrumentName;
+    }
+
+    public override int GetHashCode()
+    {
+        return instrumentName.GetHashCode();
     }
 }
+
