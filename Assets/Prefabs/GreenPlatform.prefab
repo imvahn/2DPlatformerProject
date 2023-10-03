@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6153514102477427504}
   - component: {fileID: 3022986206088528472}
   m_Layer: 0
-  m_Name: PixelManPlatformBackgrounds
+  m_Name: GreenPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -71,8 +71,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1859007885
-  m_SortingLayer: 0
+  m_SortingLayerID: -44294457
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 6060611943934211680, guid: e5721f0ef94ec7a42822da2bcabcb909, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -95,7 +95,7 @@ Animator:
   m_GameObject: {fileID: 4488143907144246592}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2f38119897831425eb8d6435f3d392ea, type: 2}
+  m_Controller: {fileID: 9100000, guid: fb3875ddbda694d918e9d0133afaf458, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
