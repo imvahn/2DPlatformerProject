@@ -8,17 +8,22 @@ public class PlayerMovement : MonoBehaviour
 {
 
     public float speed;
-    private Rigidbody2D rb2d;
     public float jumpForce;
-    private SpriteRenderer spriteRenderer;
-    public float raycastLength = 0.84f;
-    public LayerMask platformLayerMask;
-    public bool isGrounded;
-    public bool isRunning;
-    public Animator animator;
     public float bendTime;
     public float jumpTime;
+    public float raycastLength = 0.84f;
+
+    private Rigidbody2D rb2d;
+    private SpriteRenderer spriteRenderer;
+
+    public Animator animator;
     public Sprite pinkGuy;
+
+    public LayerMask platformLayerMask;
+
+    public bool isGrounded;
+    public bool isRunning;
+    public bool isPaused;
 
     // Start is called before the first frame update
     void Start()
@@ -27,11 +32,19 @@ public class PlayerMovement : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         bendTime = 0.333f;
         jumpTime = 0.1f;
+        isPaused = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        // Check if the game is paused (player pressed escape)
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            isPaused = !isPaused;
+        }
+
         // Check if the player is grounded, update isGrounded
 
         RaycastHit2D groundCheckHit = Physics2D.Raycast(transform.position, Vector2.down, raycastLength, platformLayerMask);
@@ -47,15 +60,20 @@ public class PlayerMovement : MonoBehaviour
         // Jumping and horizontal movement
 
         Vector2 vel = rb2d.velocity;
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
+
+        //Check if game is paused
+        if (isPaused == false)
         {
-            if (isGrounded)
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
             {
-                StartCoroutine(Jumping());
+                if (isGrounded)
+                {
+                    StartCoroutine(Jumping());
+                }
             }
+            vel.x = Input.GetAxis("Horizontal") * speed;
+            rb2d.velocity = vel;
         }
-        vel.x = Input.GetAxis("Horizontal") * speed;
-        rb2d.velocity = vel;
 
         // Animator logic
 
