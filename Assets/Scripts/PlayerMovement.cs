@@ -109,10 +109,10 @@ public class PlayerMovement : MonoBehaviour
         animator.SetBool("isW", true);
         yield return new WaitForSeconds(bendTime);
         rb2d.velocity = new Vector2(rb2d.velocity.x, jumpForce);
-        yield return new WaitUntil(() => rb2d.velocity.y < -0.01f);
+        yield return new WaitUntil(() => rb2d.velocity.y < 0);
         animator.SetBool("isW", false);
         animator.SetBool("isFalling", true);
-        yield return new WaitUntil(() => rb2d.velocity.y > -0.01f);
+        yield return new WaitUntil(() => rb2d.velocity.y > 0);
         animator.SetBool("isFalling", false);
         yield break;
     }
