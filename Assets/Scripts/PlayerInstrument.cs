@@ -46,7 +46,7 @@ public class PlayerInstrument : MonoBehaviour
        }
     }
 
-    public List<Instrument> GetInventory()
+    static public List<Instrument> GetInventory()
     {
         return inventory;
     }
