@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerInstrument : MonoBehaviour
@@ -56,7 +57,7 @@ public class PlayerInstrument : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "instrument") //this can be changed later since comparing with tags is terrible
+        if (collision.CompareTag("instrument")) //this can be changed later since comparing with tags is terrible
         {
             if (collision.name == "piano")
             {
