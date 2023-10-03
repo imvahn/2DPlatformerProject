@@ -8,7 +8,7 @@ public class PlayerInstrument : MonoBehaviour
     // Start is called before the first frame update
 
     Instrument currentInstrument;
-    List<Instrument> inventory = new List<Instrument>(new Instrument[4]);
+    static List<Instrument> inventory = new List<Instrument>(new Instrument[4]);
 
 
     void Start()

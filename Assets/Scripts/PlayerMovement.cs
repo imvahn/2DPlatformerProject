@@ -47,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
         // Jumping and horizontal movement
 
         Vector2 vel = rb2d.velocity;
-        if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
         {
             if (isGrounded)
             {
