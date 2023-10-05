@@ -9,8 +9,6 @@ public class PlayerMovement : MonoBehaviour
 
     public float speed;
     public float jumpForce;
-    public float bendTime;
-    public float jumpTime;
     public float raycastLength = 0.84f;
 
     private Rigidbody2D rb2d;
@@ -31,8 +29,6 @@ public class PlayerMovement : MonoBehaviour
     {
         rb2d = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        bendTime = 0.333f;
-        jumpTime = 0.1f;
         isPaused = false;
         pauseMenu.SetActive(false);
     }
@@ -71,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (isGrounded)
                 {
-                    StartCoroutine(Jumping());
+                    vel.y = jumpForce;
                 }
             }
             vel.x = Input.GetAxis("Horizontal") * speed;
@@ -87,6 +83,24 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             isRunning = false;
+        }
+
+        if (vel.y > 0.01)
+        {
+            animator.SetBool("isW", true);
+        }
+        else
+        {
+            animator.SetBool("isW", false);
+        }
+
+        if (vel.y < -0.01)
+        {
+            animator.SetBool("isFalling", true);
+        }
+        else
+        {
+            animator.SetBool("isFalling", false);
         }
 
         if (isRunning && isGrounded)
@@ -123,18 +137,5 @@ public class PlayerMovement : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-    }
-
-    IEnumerator Jumping()
-    {
-        animator.SetBool("isW", true);
-        yield return new WaitForSeconds(bendTime);
-        rb2d.velocity = new Vector2(rb2d.velocity.x, jumpForce);
-        yield return new WaitUntil(() => rb2d.velocity.y < -0.01f);
-        animator.SetBool("isW", false);
-        animator.SetBool("isFalling", true);
-        yield return new WaitUntil(() => rb2d.velocity.y > -0.01f);
-        animator.SetBool("isFalling", false);
-        yield break;
     }
 }
