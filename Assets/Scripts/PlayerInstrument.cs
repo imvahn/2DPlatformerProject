@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerInstrument : MonoBehaviour
 {
-    public string currentInstrument;
+    static public string currentInstrument;
     public static bool[] inventory = new bool[4];
     public static bool pickingUp = false;
 
@@ -53,39 +53,30 @@ public class PlayerInstrument : MonoBehaviour
     {
         return inventory;
     }
-    public string GetInstrument()
+    public static string GetInstrument()
     {
         return currentInstrument;
     }
 
-private void OnTriggerEnter2D(Collider2D other)
-{
-
-    if (other.CompareTag("instrument"))
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        pickingUp = true;
 
-        if (other.name == "piano")
-            inventory[0] = true;
-        else if (other.name == "guitar")
-            inventory[1] = true;
-        else if (other.name == "flute")
-            inventory[2] = true;
-        else if (other.name == "drums")
-            inventory[3] = true;
+        if (other.CompareTag("instrument"))
+        {
+            pickingUp = true;
 
-        Destroy(other.gameObject);
+            if (other.name == "piano")
+                inventory[0] = true;
+            else if (other.name == "guitar")
+                inventory[1] = true;
+            else if (other.name == "flute")
+                inventory[2] = true;
+            else if (other.name == "drums")
+                inventory[3] = true;
+
+            Destroy(other.gameObject);
+        }
+
     }
-
-    Debug.Log("Inventory1 after picking up:");
-        Debug.Log(inventory[0] == true);
-    Debug.Log("Inventory2 after picking up:");
-        Debug.Log(inventory[1] == true);
-    Debug.Log("Inventory3 after picking up:");
-        Debug.Log(inventory[2] == true);
-    Debug.Log("Inventory4 after picking up:");
-        Debug.Log(inventory[3] == true);
-    }
-
 
 }

@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
 
     private float lastJumpTime;
 
-    public PlayerInstrument playerInstrument;
+    public float bounceWindow = 0.6f;
 
     // Start is called before the first frame update
     void Start()
@@ -35,13 +35,12 @@ public class PlayerMovement : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         isPaused = false;
         pauseMenu.SetActive(false);
-        playerInstrument = GetComponent<PlayerInstrument>();
 }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(playerInstrument.GetInstrument());
+        Debug.Log(PlayerInstrument.GetInstrument());
 
         // Check if the game is paused (player pressed escape)
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -67,25 +66,33 @@ public class PlayerMovement : MonoBehaviour
         Vector2 vel = rb2d.velocity;
 
         //Check if game is paused
+
         if (isPaused == false)
         {
             if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
             {
                 if (isGrounded)
                 {
-                   // if (playerInstrument.GetInstrument() == Instrument.Drums)
-                   // {
-                    //    if (Time.time - lastJumpTime <= 1.0)
-                   //     {
-                      //      vel.y = 2f * jumpForce;
-                      //      lastJumpTime = Time.time;
-                    //    }
-                    //    else
-                   //     {
-                            vel.y = jumpForce;
-                            lastJumpTime = Time.time;
-                   //     }
-                  //  }
+                    if (PlayerInstrument.GetInstrument() == Instrument.Drums)
+                    {
+                        // Check if within the bounce window
+                        if (Time.time - lastJumpTime <= bounceWindow)
+                        {
+                            vel.y = 2f * jumpForce;  // Bounce effect
+                        }
+                        else
+                        {
+                            vel.y = jumpForce;  // Normal jump
+                        }
+
+                        lastJumpTime = Time.time;
+                    }
+                    else
+                    {
+                        // For instruments other than drums, always do a normal jump
+                        vel.y = jumpForce;
+                        lastJumpTime = Time.time;
+                    }
                 }
             }
 
