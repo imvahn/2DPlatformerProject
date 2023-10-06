@@ -28,6 +28,8 @@ public class PlayerMovement : MonoBehaviour
 
     public static bool swapped = false;
 
+    private int jumpCount;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -103,22 +105,22 @@ public class PlayerMovement : MonoBehaviour
                     if (PlayerInstrument.currentInstrument == Instrument.Drums)
                     {
                         // Check if within the bounce window
-                        if (Time.time - lastJumpTime <= bounceWindow) // TODO need to make this work
+                        if (jumpCount >= 1) // TODO need to make this work
                         {
                             vel.y = 2f * jumpForce;  // Bounce effect
+                            jumpCount = 0;
                         }
                         else
                         {
                             vel.y = jumpForce;  // Normal jump
+                            jumpCount++;
+                    
                         }
-
-                        lastJumpTime = Time.time;
                     }
                     else
                     {
                         // For instruments other than drums, always do a normal jump
                         vel.y = jumpForce;
-                        lastJumpTime = Time.time;
                     }
                 }
             }
