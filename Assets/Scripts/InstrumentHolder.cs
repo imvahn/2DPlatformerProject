@@ -1,3 +1,5 @@
+using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class InstrumentHolder : MonoBehaviour
@@ -10,6 +12,9 @@ public class InstrumentHolder : MonoBehaviour
     public Sprite drums;
     Rigidbody2D rb;
     Transform go;  // Changed GameObject to Transform
+    float timer = 0f;
+    bool flash;
+    float xPos;
 
     // Start is called before the first frame update
     void Start()
@@ -21,24 +26,71 @@ public class InstrumentHolder : MonoBehaviour
         {
             go = transform.GetChild(0);
         }
+        if (go != null)
+        {
+            go.localPosition = new Vector3(0.8f, -0.23f, 0);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        if (rb.velocity.x > 0.01)
+        if (go != null)
         {
-            go.localPosition = new Vector3(0.8f, -0.23f, 0);
+            // Get the player's y velocity
+            float yVelocity = rb.velocity.y;
+            float xVelocity = rb.velocity.x;
+
+            // Calculate the y position based on the player's y velocity
+            float yPos = -0.23f + Mathf.Max(0, yVelocity * 0.1f);  // Adjust the multiplier as needed
+            if (xVelocity > 0)
+            {
+                xPos = 0.8f + Mathf.Max(0, xVelocity * 0.01f);
+
+            }
+            else if (xVelocity < 0)
+            {
+                xPos = -0.8f + Mathf.Max(0, xVelocity * 0.01f);
+            }
+
+            // Set the local position
+            go.localPosition = new Vector3(xPos, yPos, 0);
         }
-        else if (rb.velocity.x < -0.01)  // Change to else if to handle only one condition at a time
+
+        if (PlayerMovement.swapped == true)
         {
-            go.localPosition = new Vector3(-0.8f, -0.23f, 0);
+            SwapCooldown();
         }
 
         if (PlayerInstrument.currentInstrument == Instrument.Piano) { sr.sprite = piano; }
         if (PlayerInstrument.currentInstrument == Instrument.Flute) { sr.sprite = flute;  }
         if (PlayerInstrument.currentInstrument == Instrument.Drums) { sr.sprite = drums;  }
         if (PlayerInstrument.currentInstrument == Instrument.Guitar) { sr.sprite = guitar;  }
+    }
+
+    void SwapCooldown()
+    {
+        flash = true;
+        StartCoroutine(CooldownCoroutine());
+    }
+
+    void EndCooldown()
+    {
+        timer = 0f;
+        flash = false;
+    }
+    private IEnumerator CooldownCoroutine()
+    {
+        while (timer <= 9.6f && flash != false)
+        {
+            sr.color = Color.black;
+            yield return new WaitForSeconds(0.01f);
+            sr.color = Color.white;
+            yield return new WaitForSeconds(0.01f);
+            timer += 0.0192f;
+        }
+        PlayerMovement.swapped = false;
+        EndCooldown();
     }
 }

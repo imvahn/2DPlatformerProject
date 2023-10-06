@@ -9,8 +9,6 @@ public class PlayerInstrument : MonoBehaviour
 {
     static public string currentInstrument;
     public static List<bool> inventory = new List<bool>(new bool[4]) { false, false, false, false };
-    public static bool pickingUp = false;
-
 
     // Start is called before the first frame update
     void Start()
@@ -25,8 +23,6 @@ public class PlayerInstrument : MonoBehaviour
 
         if (other.CompareTag("instrument"))
         {
-            pickingUp = true;
-
             if (other.name == "piano")
                 inventory[0] = true;
             else if (other.name == "guitar")
