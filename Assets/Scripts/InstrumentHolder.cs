@@ -72,6 +72,7 @@ public class InstrumentHolder : MonoBehaviour
     void SwapCooldown()
     {
         flash = true;
+        timer = Time.deltaTime;
         StartCoroutine(CooldownCoroutine());
     }
 
@@ -82,15 +83,20 @@ public class InstrumentHolder : MonoBehaviour
     }
     private IEnumerator CooldownCoroutine()
     {
-        while (timer <= 9.6f && flash != false)
+        float duration = 9.6f;  // Duration in seconds
+
+        float endTime = Time.time + duration;  // Calculate the end time
+
+        while (Time.time < endTime && flash)
         {
             sr.color = Color.black;
             yield return new WaitForSeconds(0.01f);
             sr.color = Color.white;
             yield return new WaitForSeconds(0.01f);
-            timer += 0.0192f;
         }
+
         PlayerMovement.swapped = false;
         EndCooldown();
     }
+
 }
