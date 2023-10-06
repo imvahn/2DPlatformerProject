@@ -13,7 +13,6 @@ public class MusicController : MonoBehaviour
     public AudioClip pianoMusic;
     public AudioClip fluteMusic;
 
-    private PlayerInstrument player;
     AudioClip current;
 
     // Start is called before the first frame update
@@ -27,11 +26,11 @@ public class MusicController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (player.GetInstrument() != Instrument.Piano)
+        if (PlayerInstrument.GetInstrument() != Instrument.Piano)
         {
-            if (player.GetInstrument() == Instrument.Flute) { current = fluteMusic; }
-            if (player.GetInstrument() == Instrument.Drums) { current = drumMusic; }
-            if (player.GetInstrument() == Instrument.Guitar) { current = guitarMusic; }
+            if (PlayerInstrument.GetInstrument() == Instrument.Flute) { current = fluteMusic; }
+            if (PlayerInstrument.GetInstrument() == Instrument.Drums) { current = drumMusic; }
+            if (PlayerInstrument.GetInstrument() == Instrument.Guitar) { current = guitarMusic; }
         }
     }
 }

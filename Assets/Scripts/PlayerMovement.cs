@@ -76,7 +76,7 @@ public class PlayerMovement : MonoBehaviour
                     if (PlayerInstrument.GetInstrument() == Instrument.Drums)
                     {
                         // Check if within the bounce window
-                        if (Time.time - lastJumpTime <= bounceWindow)
+                        if (Time.time - lastJumpTime <= bounceWindow) // TODO need to make this work
                         {
                             vel.y = 2f * jumpForce;  // Bounce effect
                         }
