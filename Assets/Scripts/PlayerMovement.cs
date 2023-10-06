@@ -105,7 +105,7 @@ public class PlayerMovement : MonoBehaviour
                     if (PlayerInstrument.currentInstrument == Instrument.Drums)
                     {
                         // Check if within the bounce window
-                        if (jumpCount >= 1) // TODO need to make this work
+                        if (jumpCount >= 1) // DONE need to make this work
                         {
                             vel.y = 2f * jumpForce;  // Bounce effect
                             jumpCount = 0;

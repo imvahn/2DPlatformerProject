@@ -12,7 +12,6 @@ public class InstrumentHolder : MonoBehaviour
     public Sprite drums;
     Rigidbody2D rb;
     Transform go;  // Changed GameObject to Transform
-    float timer = 0f;
     bool flash;
     float xPos;
 
@@ -72,13 +71,11 @@ public class InstrumentHolder : MonoBehaviour
     void SwapCooldown()
     {
         flash = true;
-        timer = Time.deltaTime;
         StartCoroutine(CooldownCoroutine());
     }
 
     void EndCooldown()
     {
-        timer = 0f;
         flash = false;
     }
     private IEnumerator CooldownCoroutine()
