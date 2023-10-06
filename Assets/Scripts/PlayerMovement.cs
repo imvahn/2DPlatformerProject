@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
 
     private float lastJumpTime;
 
-    public float bounceWindow = 0.6f;
+    public float bounceWindow = 1.3f;
 
     // Start is called before the first frame update
     void Start()
