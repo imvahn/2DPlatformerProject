@@ -8,6 +8,7 @@ public class CameraScript : MonoBehaviour
     private Transform player;
 
     public int offsetX;
+    public int offsetY;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,11 @@ public class CameraScript : MonoBehaviour
         Vector3 pos = transform.position;
         pos.x = player.position.x + offsetX;
         if (player.position.x >= offsetX)
+        {
+            transform.position = pos;
+        }
+        pos.y = player.position.y + offsetY;
+        if (player.position.y >= offsetY)
         {
             transform.position = pos;
         }

@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
     public bool isPaused;
 
     private float lastJumpTime;
-    public float bounceWindow = 1.3f;
+    public float bounceWindow = 2f;
 
     public static bool swapped = false;
 
