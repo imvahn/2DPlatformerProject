@@ -40,7 +40,30 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(PlayerInstrument.GetInstrument());
+        /*
+        if player swaps instrument, change currentInstrument
+
+        inventory[0] is piano     (1)
+        inventory[1] is guitar    (2)
+        inventory[2] is flute     (3)
+        inventory[3] is drums     (4)
+         */ 
+        if (Input.GetKeyDown(KeyCode.Alpha1) && PlayerInstrument.inventory[0] == true)
+        {
+            PlayerInstrument.currentInstrument = Instrument.Piano;
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2) && PlayerInstrument.inventory[1] == true)
+        {
+            PlayerInstrument.currentInstrument = Instrument.Guitar;
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha3) && PlayerInstrument.inventory[2] == true)
+        {
+            PlayerInstrument.currentInstrument = Instrument.Flute;
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha4) && PlayerInstrument.inventory[3] == true)
+        {
+            PlayerInstrument.currentInstrument = Instrument.Drums;
+        }
 
         // Check if the game is paused (player pressed escape)
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -73,7 +96,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (isGrounded)
                 {
-                    if (PlayerInstrument.GetInstrument() == Instrument.Drums)
+                    if (PlayerInstrument.currentInstrument == Instrument.Drums)
                     {
                         // Check if within the bounce window
                         if (Time.time - lastJumpTime <= bounceWindow) // TODO need to make this work
