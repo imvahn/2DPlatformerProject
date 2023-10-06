@@ -15,7 +15,6 @@ public class PlayerMovement : MonoBehaviour
     private SpriteRenderer spriteRenderer;
 
     public Animator animator;
-    public Sprite pinkGuy;
     public GameObject pauseMenu;
 
     public LayerMask platformLayerMask;
