@@ -24,6 +24,10 @@ public class PlayerMovement : MonoBehaviour
     public bool isRunning;
     public bool isPaused;
 
+    private float lastJumpTime;
+
+    public PlayerInstrument playerInstrument;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,11 +35,13 @@ public class PlayerMovement : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         isPaused = false;
         pauseMenu.SetActive(false);
-    }
+        playerInstrument = GetComponent<PlayerInstrument>();
+}
 
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(playerInstrument.GetInstrument());
 
         // Check if the game is paused (player pressed escape)
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -67,13 +73,25 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (isGrounded)
                 {
-                    vel.y = jumpForce;
+                   // if (playerInstrument.GetInstrument() == Instrument.Drums)
+                   // {
+                    //    if (Time.time - lastJumpTime <= 1.0)
+                   //     {
+                      //      vel.y = 2f * jumpForce;
+                      //      lastJumpTime = Time.time;
+                    //    }
+                    //    else
+                   //     {
+                            vel.y = jumpForce;
+                            lastJumpTime = Time.time;
+                   //     }
+                  //  }
                 }
             }
+
             vel.x = Input.GetAxis("Horizontal") * speed;
             rb2d.velocity = vel;
         }
-
         // Animator logic
 
         if (Mathf.Abs(vel.x) > 0.01 && isGrounded)
