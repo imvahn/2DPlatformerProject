@@ -25,8 +25,9 @@ public class PlayerMovement : MonoBehaviour
     public bool isPaused;
 
     private float lastJumpTime;
-
     public float bounceWindow = 1.3f;
+
+    public static bool swapped = false;
 
     // Start is called before the first frame update
     void Start()
@@ -48,20 +49,24 @@ public class PlayerMovement : MonoBehaviour
         inventory[2] is flute     (3)
         inventory[3] is drums     (4)
          */ 
-        if (Input.GetKeyDown(KeyCode.Alpha1) && PlayerInstrument.inventory[0] == true)
+        if (Input.GetKeyDown(KeyCode.Alpha1) && PlayerInstrument.inventory[0] == true && swapped == false)
         {
+            swapped = true;
             PlayerInstrument.currentInstrument = Instrument.Piano;
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha2) && PlayerInstrument.inventory[1] == true)
+        else if (Input.GetKeyDown(KeyCode.Alpha2) && PlayerInstrument.inventory[1] == true && swapped == false)
         {
+            swapped = true;
             PlayerInstrument.currentInstrument = Instrument.Guitar;
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha3) && PlayerInstrument.inventory[2] == true)
+        else if (Input.GetKeyDown(KeyCode.Alpha3) && PlayerInstrument.inventory[2] == true && swapped == false)
         {
+            swapped = true;
             PlayerInstrument.currentInstrument = Instrument.Flute;
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha4) && PlayerInstrument.inventory[3] == true)
+        else if (Input.GetKeyDown(KeyCode.Alpha4) && PlayerInstrument.inventory[3] == true && swapped == false)
         {
+            swapped = true;
             PlayerInstrument.currentInstrument = Instrument.Drums;
         }
 
