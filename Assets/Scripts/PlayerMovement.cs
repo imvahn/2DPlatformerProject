@@ -187,9 +187,9 @@ public class PlayerMovement : MonoBehaviour
 
         // Restart the scene if the player falls out of bounds
 
-        if (transform.position.y < -6)
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
+        //if (transform.position.y < -6)
+        //{
+        //    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        //}
     }
 }
