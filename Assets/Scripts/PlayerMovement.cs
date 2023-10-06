@@ -50,22 +50,22 @@ public class PlayerMovement : MonoBehaviour
         inventory[2] is flute     (3)
         inventory[3] is drums     (4)
          */ 
-        if (Input.GetKeyDown(KeyCode.Alpha1) && PlayerInstrument.inventory[0] == true && swapped == false)
+        if (Input.GetKeyDown(KeyCode.Alpha1) && PlayerInstrument.inventory[0] == true && swapped == false && PlayerInstrument.currentInstrument != Instrument.Piano)
         {
             swapped = true;
             PlayerInstrument.currentInstrument = Instrument.Piano;
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha2) && PlayerInstrument.inventory[1] == true && swapped == false)
+        else if (Input.GetKeyDown(KeyCode.Alpha2) && PlayerInstrument.inventory[1] == true && swapped == false && PlayerInstrument.currentInstrument != Instrument.Guitar)
         {
             swapped = true;
             PlayerInstrument.currentInstrument = Instrument.Guitar;
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha3) && PlayerInstrument.inventory[2] == true && swapped == false)
+        else if (Input.GetKeyDown(KeyCode.Alpha3) && PlayerInstrument.inventory[2] == true && swapped == false && PlayerInstrument.currentInstrument != Instrument.Flute)
         {
             swapped = true;
             PlayerInstrument.currentInstrument = Instrument.Flute;
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha4) && PlayerInstrument.inventory[3] == true && swapped == false)
+        else if (Input.GetKeyDown(KeyCode.Alpha4) && PlayerInstrument.inventory[3] == true && swapped == false && PlayerInstrument.currentInstrument != Instrument.Drums)
         {
             swapped = true;
             PlayerInstrument.currentInstrument = Instrument.Drums;
