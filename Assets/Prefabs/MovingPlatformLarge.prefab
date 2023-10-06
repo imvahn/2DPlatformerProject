@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 4355216816672395786}
   - component: {fileID: 1383621589505248395}
   - component: {fileID: 6368699610968758986}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MovingPlatformLarge
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -73,8 +73,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -44294457
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: -5608710462190552408, guid: d1fc454236444b04a8ed606c0437dd96, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -96,7 +96,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1370758017294660774}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: e40fc656f2ac6f0439c273d943c593be, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -145,10 +145,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  pauseAtPatrolPoint: 0
-  accelerate: 1
-  patrolPoints: []
-  rb2d: {fileID: 0}
+  startingPoint: 0
+  points: []
 --- !u!50 &6368699610968758986
 Rigidbody2D:
   serializedVersion: 4
