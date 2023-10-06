@@ -1,13 +1,16 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
 public class PlayerInstrument : MonoBehaviour
 {
     static public string currentInstrument;
-    public static bool[] inventory = new bool[4];
+    public static List<bool> inventory = new List<bool>(new bool[4]) { false, false, false, false };
     public static bool pickingUp = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -15,11 +18,6 @@ public class PlayerInstrument : MonoBehaviour
         // default starting instrument is currently piano
         currentInstrument = Instrument.Piano;
         inventory[0] = true;
-        inventory[1] = false;
-        inventory[2] = false;
-        inventory[3] = false;
-
-        //check if inventory full using inventory == [true, true, true, true]
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -41,6 +39,10 @@ public class PlayerInstrument : MonoBehaviour
             Destroy(other.gameObject); //TODO instantiate animation if possible
         }
 
+    }
+    public void EmptyInventory()
+    {
+        inventory = new List<bool>(inventory) { false, false, false, false };
     }
 
 }
