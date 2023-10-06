@@ -128,17 +128,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  jumpForce: 4
+  jumpForce: 6
   raycastLength: 0.84
+  animator: {fileID: 0}
+  pinkGuy: {fileID: 0}
+  pauseMenu: {fileID: 0}
   platformLayerMask:
     serializedVersion: 2
     m_Bits: 64
   isGrounded: 0
   isRunning: 0
-  animator: {fileID: 0}
-  bendTime: 0
-  jumpTime: 0
-  pinkGuy: {fileID: 0}
+  isPaused: 0
+  bounceWindow: 0.6
 --- !u!114 &3575975884171453613
 MonoBehaviour:
   m_ObjectHideFlags: 0
