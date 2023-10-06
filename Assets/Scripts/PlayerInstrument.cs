@@ -32,7 +32,7 @@ public class PlayerInstrument : MonoBehaviour
             else if (other.name == "drums")
                 inventory[3] = true;
 
-            Destroy(other.gameObject); //TODO instantiate animation if possible
+            Destroy(other.gameObject);
         }
 
     }
