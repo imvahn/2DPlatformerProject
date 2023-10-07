@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pickup_animation_0
+      name: 2
       rect:
         serializedVersion: 2
         x: 22
@@ -131,7 +131,7 @@ TextureImporter:
         width: 7
         height: 7
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -144,7 +144,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pickup_animation_1
+      name: 3
       rect:
         serializedVersion: 2
         x: 40
@@ -152,7 +152,7 @@ TextureImporter:
         width: 9
         height: 9
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -165,7 +165,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pickup_animation_2
+      name: 4
       rect:
         serializedVersion: 2
         x: 17
@@ -173,7 +173,7 @@ TextureImporter:
         width: 13
         height: 12
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -186,7 +186,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pickup_animation_3
+      name: 5
       rect:
         serializedVersion: 2
         x: 38
@@ -194,7 +194,7 @@ TextureImporter:
         width: 15
         height: 15
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -207,7 +207,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pickup_animation_4
+      name: 1
       rect:
         serializedVersion: 2
         x: 9
@@ -215,7 +215,7 @@ TextureImporter:
         width: 1
         height: 1
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -238,11 +238,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      pickup_animation_0: 1263187905
-      pickup_animation_1: -1243433014
-      pickup_animation_2: -847126911
-      pickup_animation_3: 740639086
-      pickup_animation_4: -37340774
+      1: -37340774
+      2: 1263187905
+      3: -1243433014
+      4: -847126911
+      5: 740639086
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

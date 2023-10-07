@@ -20,6 +20,10 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: -669997381
       objectReference: {fileID: 0}
+    - target: {fileID: 3575975884171453613, guid: b8772d1169e1a45e3b5a2b29e0fcafbd, type: 3}
+      propertyPath: pickupPrefab
+      value: 
+      objectReference: {fileID: 5208086055280712103, guid: 2d66ccd0a7e116c418b7a4e56d763788, type: 3}
     - target: {fileID: 4688165797320816770, guid: b8772d1169e1a45e3b5a2b29e0fcafbd, type: 3}
       propertyPath: m_SortingLayer
       value: 7
