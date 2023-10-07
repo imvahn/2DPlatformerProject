@@ -5,7 +5,7 @@ using UnityEngine;
 public class Parallax : MonoBehaviour
 {
 
-    public Transform cameraView;
+    private Transform cameraView;
 
     public float parallaxScale;
     public float offsetX;
@@ -19,6 +19,7 @@ public class Parallax : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        cameraView = GameObject.Find("Main Camera").transform;
         Vector3 pos = transform.position;
         pos.x = (cameraView.position.x + offsetX) * parallaxScale;
         transform.position = pos;
