@@ -6,8 +6,6 @@ using UnityEngine;
 public class MusicController : MonoBehaviour
 {
 
-    public AudioSource musicSource;
-
     public AudioClip drumMusic;
     public AudioClip drumTransition;
 
