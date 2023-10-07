@@ -15,6 +15,8 @@ public class InstrumentHolder : MonoBehaviour
     bool flash;
     float xPos;
 
+    public Material instrumentMaterial;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -86,9 +88,9 @@ public class InstrumentHolder : MonoBehaviour
 
         while (Time.time < endTime && flash)
         {
-            sr.color = Color.black;
+            instrumentMaterial.color = Color.black;
             yield return new WaitForSeconds(0.01f);
-            sr.color = Color.white;
+            instrumentMaterial.color = Color.white;
             yield return new WaitForSeconds(0.01f);
         }
 
