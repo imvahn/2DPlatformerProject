@@ -16,22 +16,22 @@ public class TransitionController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Q))//green scene
+        if (PlayerInstrument.currentInstrument == Instrument.Guitar) //guitar (green)
         {
             animator.SetInteger("Transition", 1);
         }
 
-        if (Input.GetKey(KeyCode.W))//orange scene
+        if (PlayerInstrument.currentInstrument == Instrument.Drums)//drums (orange)
         {
             animator.SetInteger("Transition", 2);
         }
 
-        if (Input.GetKey(KeyCode.E))//purple scene
+        if (PlayerInstrument.currentInstrument == Instrument.Flute)//flute (purple)
         {
             animator.SetInteger("Transition", 3);
         }
 
-        if (Input.GetKey(KeyCode.R))//light green scene
+        if (PlayerInstrument.currentInstrument == Instrument.Piano) //piano (light green)
         {
             animator.SetInteger("Transition", 4);
         }
