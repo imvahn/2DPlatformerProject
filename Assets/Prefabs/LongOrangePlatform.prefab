@@ -1,0 +1,301 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8804341037408164988
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4143666395289619043}
+  m_Layer: 0
+  m_Name: LongOrangePlatform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4143666395289619043
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8804341037408164988}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 346.6894, y: -6.085162, z: 0.5779301}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3857028000227417579}
+  - {fileID: 5540216360244154909}
+  - {fileID: 3039929855422191174}
+  - {fileID: 3968076347803027097}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2659622105065715507
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4143666395289619043}
+    m_Modifications:
+    - target: {fileID: 1152687022527658652, guid: b607569b70b9e467cbe7480425f52373, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255953103480269528, guid: b607569b70b9e467cbe7480425f52373, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255953103480269528, guid: b607569b70b9e467cbe7480425f52373, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255953103480269528, guid: b607569b70b9e467cbe7480425f52373, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255953103480269528, guid: b607569b70b9e467cbe7480425f52373, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255953103480269528, guid: b607569b70b9e467cbe7480425f52373, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255953103480269528, guid: b607569b70b9e467cbe7480425f52373, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255953103480269528, guid: b607569b70b9e467cbe7480425f52373, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255953103480269528, guid: b607569b70b9e467cbe7480425f52373, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255953103480269528, guid: b607569b70b9e467cbe7480425f52373, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255953103480269528, guid: b607569b70b9e467cbe7480425f52373, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4573794595561389499, guid: b607569b70b9e467cbe7480425f52373, type: 3}
+      propertyPath: m_Name
+      value: PixelManPlatformBackgrounds_4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b607569b70b9e467cbe7480425f52373, type: 3}
+--- !u!4 &3857028000227417579 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1255953103480269528, guid: b607569b70b9e467cbe7480425f52373, type: 3}
+  m_PrefabInstance: {fileID: 2659622105065715507}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2774070978027744321
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4143666395289619043}
+    m_Modifications:
+    - target: {fileID: 1152687022527658652, guid: b607569b70b9e467cbe7480425f52373, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255953103480269528, guid: b607569b70b9e467cbe7480425f52373, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255953103480269528, guid: b607569b70b9e467cbe7480425f52373, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255953103480269528, guid: b607569b70b9e467cbe7480425f52373, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255953103480269528, guid: b607569b70b9e467cbe7480425f52373, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255953103480269528, guid: b607569b70b9e467cbe7480425f52373, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255953103480269528, guid: b607569b70b9e467cbe7480425f52373, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255953103480269528, guid: b607569b70b9e467cbe7480425f52373, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255953103480269528, guid: b607569b70b9e467cbe7480425f52373, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255953103480269528, guid: b607569b70b9e467cbe7480425f52373, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255953103480269528, guid: b607569b70b9e467cbe7480425f52373, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4573794595561389499, guid: b607569b70b9e467cbe7480425f52373, type: 3}
+      propertyPath: m_Name
+      value: PixelManPlatformBackgrounds_4 (3)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b607569b70b9e467cbe7480425f52373, type: 3}
+--- !u!4 &3968076347803027097 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1255953103480269528, guid: b607569b70b9e467cbe7480425f52373, type: 3}
+  m_PrefabInstance: {fileID: 2774070978027744321}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4277868419664510110
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4143666395289619043}
+    m_Modifications:
+    - target: {fileID: 1152687022527658652, guid: b607569b70b9e467cbe7480425f52373, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255953103480269528, guid: b607569b70b9e467cbe7480425f52373, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255953103480269528, guid: b607569b70b9e467cbe7480425f52373, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255953103480269528, guid: b607569b70b9e467cbe7480425f52373, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255953103480269528, guid: b607569b70b9e467cbe7480425f52373, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255953103480269528, guid: b607569b70b9e467cbe7480425f52373, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255953103480269528, guid: b607569b70b9e467cbe7480425f52373, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255953103480269528, guid: b607569b70b9e467cbe7480425f52373, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255953103480269528, guid: b607569b70b9e467cbe7480425f52373, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255953103480269528, guid: b607569b70b9e467cbe7480425f52373, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255953103480269528, guid: b607569b70b9e467cbe7480425f52373, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4573794595561389499, guid: b607569b70b9e467cbe7480425f52373, type: 3}
+      propertyPath: m_Name
+      value: PixelManPlatformBackgrounds_4 (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b607569b70b9e467cbe7480425f52373, type: 3}
+--- !u!4 &3039929855422191174 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1255953103480269528, guid: b607569b70b9e467cbe7480425f52373, type: 3}
+  m_PrefabInstance: {fileID: 4277868419664510110}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6740982491455469765
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4143666395289619043}
+    m_Modifications:
+    - target: {fileID: 1152687022527658652, guid: b607569b70b9e467cbe7480425f52373, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255953103480269528, guid: b607569b70b9e467cbe7480425f52373, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255953103480269528, guid: b607569b70b9e467cbe7480425f52373, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255953103480269528, guid: b607569b70b9e467cbe7480425f52373, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255953103480269528, guid: b607569b70b9e467cbe7480425f52373, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255953103480269528, guid: b607569b70b9e467cbe7480425f52373, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255953103480269528, guid: b607569b70b9e467cbe7480425f52373, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255953103480269528, guid: b607569b70b9e467cbe7480425f52373, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255953103480269528, guid: b607569b70b9e467cbe7480425f52373, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255953103480269528, guid: b607569b70b9e467cbe7480425f52373, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255953103480269528, guid: b607569b70b9e467cbe7480425f52373, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4573794595561389499, guid: b607569b70b9e467cbe7480425f52373, type: 3}
+      propertyPath: m_Name
+      value: PixelManPlatformBackgrounds_4 (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b607569b70b9e467cbe7480425f52373, type: 3}
+--- !u!4 &5540216360244154909 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1255953103480269528, guid: b607569b70b9e467cbe7480425f52373, type: 3}
+  m_PrefabInstance: {fileID: 6740982491455469765}
+  m_PrefabAsset: {fileID: 0}
