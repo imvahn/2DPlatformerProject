@@ -16,11 +16,11 @@ public class LightGreenSkyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.R))//light green scene
+        if (PlayerInstrument.currentInstrument == Instrument.Guitar)//light green scene (guitar)
         {
             spriteRenderer.sortingOrder = 1;
         }
-        else if (Input.GetKey(KeyCode.Q) || Input.GetKey(KeyCode.E) || Input.GetKey(KeyCode.W))
+        else if (PlayerInstrument.currentInstrument == Instrument.Piano || PlayerInstrument.currentInstrument == Instrument.Drums || PlayerInstrument.currentInstrument == Instrument.Flute)
         {
             spriteRenderer.sortingOrder = -1;
         }

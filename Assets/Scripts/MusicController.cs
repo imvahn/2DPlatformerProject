@@ -1,6 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using Unity.PlasticSCM.Editor.WebApi;
 using UnityEngine;
 
 public class MusicController : MonoBehaviour
@@ -18,54 +16,40 @@ public class MusicController : MonoBehaviour
     public AudioClip fluteMusic;
     public AudioClip fluteTransition;
 
-    AudioClip current;
+    public AudioSource musicSource;
 
     // Start is called before the first frame update
     void Start()
     {
-        current = pianoMusic;
-        AudioSource.PlayClipAtPoint(current, transform.position);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (PlayerMovement.swapped == false)
+        if (PlayerMovement.swapped == true)
         {
-            if (PlayerInstrument.currentInstrument == Instrument.Piano && current != pianoMusic) { StartCoroutine(MusicPlayer(pianoMusic)); }
-            else if (PlayerInstrument.currentInstrument == Instrument.Flute && current != fluteMusic) { StartCoroutine(MusicPlayer(fluteMusic)); }
-            else if (PlayerInstrument.currentInstrument == Instrument.Drums && current != drumMusic) { StartCoroutine(MusicPlayer(drumMusic)); }
-            else if (PlayerInstrument.currentInstrument == Instrument.Guitar && current != guitarMusic) { StartCoroutine(MusicPlayer(guitarMusic)); }
+            // Check if music is currently playing and the instrument has changed
+            if (PlayerInstrument.currentInstrument == Instrument.Piano) { PlayMusic(pianoMusic, pianoTransition); }
+            else if (PlayerInstrument.currentInstrument == Instrument.Flute) { PlayMusic(fluteMusic, fluteTransition); }
+            else if (PlayerInstrument.currentInstrument == Instrument.Drums) { PlayMusic(drumMusic, drumTransition); }
+            else if (PlayerInstrument.currentInstrument == Instrument.Guitar) { PlayMusic(guitarMusic, guitarTransition); }
         }
     }
 
-    private IEnumerator MusicPlayer(AudioClip audio)
+    private void PlayMusic(AudioClip music, AudioClip transition)
     {
-        if (audio != null)
-        {
-            if (audio == pianoMusic)
-            {
-                current = pianoTransition;
-            }
-            if (audio == fluteMusic)
-            {
-                current = fluteTransition;
-            }
-            if (audio == drumMusic)
-            {
-                current = drumTransition;
-            }
-            if (audio == guitarMusic)
-            {
-                current = guitarTransition;
-            }
-            yield return new WaitForSeconds(9.6f);
-            current = audio;
-            EndCoroutine(audio);
-        }
+            StartCoroutine(PlayMusicCoroutine(transition, music));
     }
-    void EndCoroutine(AudioClip audio)
+
+    private IEnumerator PlayMusicCoroutine(AudioClip transition, AudioClip audio)
     {
-        StopCoroutine(MusicPlayer(audio));
+        musicSource.PlayOneShot(transition);
+        yield return new WaitForSeconds(9.6f);
+        musicSource.PlayOneShot(audio);
+    }
+
+    private void StopMusic()
+    {
+        musicSource.Stop();
     }
 }
