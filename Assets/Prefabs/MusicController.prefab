@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8565467720198470955
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9014789119141863303}
+  - component: {fileID: 27174165546829696}
+  m_Layer: 0
+  m_Name: MusicController
+  m_TagString: Untagged
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9014789119141863303
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8565467720198470955}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -339.6143, y: -0.34131932, z: 5.6440687}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &27174165546829696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8565467720198470955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 661e9e18fcce5084ea3643507e3c8883, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drumMusic: {fileID: 8300000, guid: 057ba322ddcbf4b8b941c2927b512a3c, type: 3}
+  drumTransition: {fileID: 8300000, guid: a9b99e4de98a94d749506c0d0252e31d, type: 3}
+  guitarMusic: {fileID: 8300000, guid: cb4d1231c02054d69aeddd5f9743152f, type: 3}
+  guitarTransition: {fileID: 8300000, guid: b77a9ae5f61604055aa09d2bb8d5eeb7, type: 3}
+  pianoMusic: {fileID: 8300000, guid: 839f4c5bc4caf45a2ad23c525202c7b6, type: 3}
+  pianoTransition: {fileID: 8300000, guid: db6cbbaf2ccab4cd88efce4967fb67a0, type: 3}
+  fluteMusic: {fileID: 8300000, guid: fcd4faebb8f69487f964a10b99799020, type: 3}
+  fluteTransition: {fileID: 8300000, guid: 2ba5a9f7febc04d788d9ea44bf27a0e7, type: 3}
+  musicSource: {fileID: 0}
