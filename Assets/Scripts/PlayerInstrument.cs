@@ -11,6 +11,8 @@ public class PlayerInstrument : MonoBehaviour
     public static List<bool> inventory = new List<bool>(new bool[4]) { false, false, false, false };
     public static List<bool> pickingUp = new List<bool>(new bool[4]) { false, false, false, false };
 
+    public GameObject pickupPrefab;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,8 +46,9 @@ public class PlayerInstrument : MonoBehaviour
                 inventory[3] = true;
                 pickingUp[3] = true;
             }
-
+            Instantiate(pickupPrefab, other.transform.position, other.transform.rotation);
             Destroy(other.gameObject);
+            
         }
 
     }

@@ -13569,6 +13569,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 4179204905044912895, guid: 5cba828945744f4448ced1781eccbaf5, type: 3}
+      propertyPath: pickupPrefab
+      value: 
+      objectReference: {fileID: 5208086055280712103, guid: 2d66ccd0a7e116c418b7a4e56d763788, type: 3}
     - target: {fileID: 5282821675045615312, guid: 5cba828945744f4448ced1781eccbaf5, type: 3}
       propertyPath: m_SortingLayer
       value: 7
