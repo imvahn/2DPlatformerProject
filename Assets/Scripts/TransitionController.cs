@@ -10,28 +10,28 @@ public class TransitionController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        animator.SetInteger("Transition", 0);
+        animator.SetInteger("Transition", 1);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (PlayerInstrument.pickingUp[1] == true)  //guitar (green)
+        if (PlayerInstrument.currentInstrument == Instrument.Piano)  //piano (green)
         {
             animator.SetInteger("Transition", 1);
         }
 
-        if (PlayerInstrument.pickingUp[3] == true) //drums (orange)
+        if (PlayerInstrument.currentInstrument == Instrument.Drums) //drums (orange)
         {
             animator.SetInteger("Transition", 2);
         }
 
-        if (PlayerInstrument.pickingUp[2] == true) //flute (purple)
+        if (PlayerInstrument.currentInstrument == Instrument.Flute) //flute (purple)
         {
             animator.SetInteger("Transition", 3);
         }
 
-        if (PlayerInstrument.pickingUp[0] == true) //piano (light green)
+        if (PlayerInstrument.currentInstrument == Instrument.Guitar) //guitar (light green)
         {
             animator.SetInteger("Transition", 4);
         }

@@ -15,11 +15,11 @@ public class PurpleSkyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.E))//purple scene
+        if (PlayerInstrument.currentInstrument == Instrument.Flute)//purple scene (flute)
         {
             spriteRenderer.sortingOrder = 1;
         }
-        else if (Input.GetKey(KeyCode.Q) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.R))
+        else if (PlayerInstrument.currentInstrument == Instrument.Guitar || PlayerInstrument.currentInstrument == Instrument.Drums || PlayerInstrument.currentInstrument == Instrument.Piano)
         {
             spriteRenderer.sortingOrder = -1;
         }

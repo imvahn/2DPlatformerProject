@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GreenSkyController: MonoBehaviour
+public class GreenSkyController : MonoBehaviour
 {
 
     private SpriteRenderer spriteRenderer;
@@ -16,11 +16,11 @@ public class GreenSkyController: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Q))//green scene
+        if (PlayerInstrument.currentInstrument == Instrument.Piano)//green scene (piano)
         {
             spriteRenderer.sortingOrder = 1;
         }
-        else if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.E) || Input.GetKey(KeyCode.R))
+        else if (PlayerInstrument.currentInstrument == Instrument.Guitar || PlayerInstrument.currentInstrument == Instrument.Drums || PlayerInstrument.currentInstrument == Instrument.Flute)
         {
             spriteRenderer.sortingOrder = -1;
         }

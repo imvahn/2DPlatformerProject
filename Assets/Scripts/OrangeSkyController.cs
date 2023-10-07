@@ -15,12 +15,12 @@ public class OrangeSkyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.W))//orange scene
+        if (PlayerInstrument.currentInstrument == Instrument.Drums)//orange scene (drums)
         {
             spriteRenderer.sortingOrder = 1;
         }
-        else if (Input.GetKey(KeyCode.Q) || Input.GetKey(KeyCode.E) || Input.GetKey(KeyCode.R))
-        {
+        else if (PlayerInstrument.currentInstrument == Instrument.Guitar || PlayerInstrument.currentInstrument == Instrument.Piano || PlayerInstrument.currentInstrument == Instrument.Flute)
+        { 
             spriteRenderer.sortingOrder = -1;
         }
     }
