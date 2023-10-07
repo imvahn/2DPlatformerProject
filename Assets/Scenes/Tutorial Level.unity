@@ -23722,6 +23722,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pink_Monster
       objectReference: {fileID: 0}
+    - target: {fileID: 3905543896132863705, guid: 5cba828945744f4448ced1781eccbaf5, type: 3}
+      propertyPath: instrumentMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 54766e71b0f594b319097a38df536725, type: 2}
     - target: {fileID: 5585022731405414767, guid: 5cba828945744f4448ced1781eccbaf5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 443.45
@@ -23766,6 +23770,10 @@ PrefabInstance:
       propertyPath: pauseMenu
       value: 
       objectReference: {fileID: 1398349972}
+    - target: {fileID: 7248596933490079415, guid: 5cba828945744f4448ced1781eccbaf5, type: 3}
+      propertyPath: instrumentMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 54766e71b0f594b319097a38df536725, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
