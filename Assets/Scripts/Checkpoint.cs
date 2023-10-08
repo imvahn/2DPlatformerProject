@@ -9,9 +9,15 @@ public class Checkpoint : MonoBehaviour
     // Detect when the player falls
     void Update()
     {
-        if (transform.position.y < -10f)
-        { 
-            Respawn(); // Call the respawn function
+        // Check for collisions with "OutOfBounds" GameObject
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 0.5f);
+        foreach (var collider in colliders)
+        {
+            if (collider.CompareTag("OutOfBounds"))
+            {
+                Respawn(); // Call the respawn function
+                break; // Exit the loop once we've respawned
+            }
         }
     }
 

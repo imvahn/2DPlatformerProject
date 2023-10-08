@@ -20,6 +20,10 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: -669997381
       objectReference: {fileID: 0}
+    - target: {fileID: 1598856721099704692, guid: b8772d1169e1a45e3b5a2b29e0fcafbd, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 67b35e854bdc9ae47bfe73cd50f4f744, type: 2}
     - target: {fileID: 3575975884171453613, guid: b8772d1169e1a45e3b5a2b29e0fcafbd, type: 3}
       propertyPath: pickupPrefab
       value: 
@@ -116,6 +120,10 @@ PrefabInstance:
       propertyPath: onLand.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7838479036418095333, guid: b8772d1169e1a45e3b5a2b29e0fcafbd, type: 3}
+      propertyPath: instrumentMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 54766e71b0f594b319097a38df536725, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
