@@ -23,6 +23,8 @@ public class InstrumentHolder : MonoBehaviour
         rb = GetComponentInChildren<Rigidbody2D>();
         sr = GetComponentInChildren<SpriteRenderer>();
 
+        instrumentMaterial.color = Color.white;
+
         if (transform.childCount > 0)
         {
             go = transform.GetChild(0);

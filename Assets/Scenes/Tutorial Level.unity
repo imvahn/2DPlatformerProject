@@ -42696,7 +42696,7 @@ PrefabInstance:
     - target: {fileID: 2193156337578690342, guid: 5cba828945744f4448ced1781eccbaf5, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 67b35e854bdc9ae47bfe73cd50f4f744, type: 2}
+      objectReference: {fileID: 2100000, guid: b8d70da83cf122b4c88982cb9b3be2fd, type: 2}
     - target: {fileID: 3905543896132863705, guid: 5cba828945744f4448ced1781eccbaf5, type: 3}
       propertyPath: instrumentMaterial
       value: 
