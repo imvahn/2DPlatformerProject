@@ -27,7 +27,7 @@ public class CameraScript : MonoBehaviour
             transform.position = pos;
         }
         pos.y = player.position.y + offsetY;
-        if (player.position.y >= offsetY)
+        if (player.position.y != offsetY)
         {
             transform.position = pos;
         }
