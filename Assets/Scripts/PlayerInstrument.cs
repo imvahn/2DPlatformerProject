@@ -13,6 +13,9 @@ public class PlayerInstrument : MonoBehaviour
 
     public GameObject pickupPrefab;
 
+    public AudioSource audioSource;
+    public AudioClip pickupSFX;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,6 +50,7 @@ public class PlayerInstrument : MonoBehaviour
                 pickingUp[3] = true;
             }
             Instantiate(pickupPrefab, other.transform.position, other.transform.rotation);
+            audioSource.PlayOneShot(pickupSFX, 1);
             Destroy(other.gameObject);
             
         }

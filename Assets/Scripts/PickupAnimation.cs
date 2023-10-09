@@ -7,7 +7,7 @@ public class PickupAnimation : MonoBehaviour
     SpriteRenderer sr;
     int cfi;
     float frameTimer;
-    float framesPerSecond = 12;
+    public float framesPerSecond = 12;
     public Sprite[] sprites;
 
     void Start()

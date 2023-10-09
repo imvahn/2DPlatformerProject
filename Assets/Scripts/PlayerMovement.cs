@@ -23,12 +23,14 @@ public class PlayerMovement : MonoBehaviour
     public bool isRunning;
     public bool isPaused;
 
-    private float lastJumpTime;
     public float bounceWindow = 2f;
 
     public static bool swapped = false;
 
     private int jumpCount;
+
+    public AudioSource audioSource;
+    public AudioClip[] jumpSFX;
 
     // Start is called before the first frame update
     void Start()
@@ -108,11 +110,13 @@ public class PlayerMovement : MonoBehaviour
                         if (jumpCount >= 1) // DONE need to make this work
                         {
                             vel.y = 2f * jumpForce;  // Bounce effect
+                            audioSource.PlayOneShot(jumpSFX[UnityEngine.Random.Range(0, 2)]);
                             jumpCount = 0;
                         }
                         else
                         {
                             vel.y = jumpForce;  // Normal jump
+                            audioSource.PlayOneShot(jumpSFX[UnityEngine.Random.Range(0, 2)]);
                             jumpCount++;
                     
                         }
@@ -121,6 +125,7 @@ public class PlayerMovement : MonoBehaviour
                     {
                         // For instruments other than drums, always do a normal jump
                         vel.y = jumpForce;
+                        audioSource.PlayOneShot(jumpSFX[UnityEngine.Random.Range(0, 2)]);
                     }
                 }
             }

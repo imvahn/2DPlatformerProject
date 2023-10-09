@@ -42701,6 +42701,14 @@ PrefabInstance:
       propertyPath: instrumentMaterial
       value: 
       objectReference: {fileID: 2100000, guid: 67b35e854bdc9ae47bfe73cd50f4f744, type: 2}
+    - target: {fileID: 4179204905044912895, guid: 5cba828945744f4448ced1781eccbaf5, type: 3}
+      propertyPath: pickupSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 985feed139f01d841b5d261336b2280a, type: 3}
+    - target: {fileID: 4179204905044912895, guid: 5cba828945744f4448ced1781eccbaf5, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1002015043}
     - target: {fileID: 5585022731405414767, guid: 5cba828945744f4448ced1781eccbaf5, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.93
@@ -42745,6 +42753,22 @@ PrefabInstance:
       propertyPath: pauseMenu
       value: 
       objectReference: {fileID: 1398349972}
+    - target: {fileID: 7087834402206687612, guid: 5cba828945744f4448ced1781eccbaf5, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1002015043}
+    - target: {fileID: 7087834402206687612, guid: 5cba828945744f4448ced1781eccbaf5, type: 3}
+      propertyPath: jumpSFX.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7087834402206687612, guid: 5cba828945744f4448ced1781eccbaf5, type: 3}
+      propertyPath: jumpSFX.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 392f0f6a8d652ed48a622991e8a50883, type: 3}
+    - target: {fileID: 7087834402206687612, guid: 5cba828945744f4448ced1781eccbaf5, type: 3}
+      propertyPath: jumpSFX.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 95b5778593bcbc346b711463479d854d, type: 3}
     - target: {fileID: 7248596933490079415, guid: 5cba828945744f4448ced1781eccbaf5, type: 3}
       propertyPath: instrumentMaterial
       value: 

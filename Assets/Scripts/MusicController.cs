@@ -23,6 +23,7 @@ public class MusicController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        PlayMusic(pianoMusic, pianoTransition);
     }
 
     // Update is called once per frame
@@ -66,9 +67,13 @@ public class MusicController : MonoBehaviour
 
     private IEnumerator PlayMusicCoroutine(AudioClip transition, AudioClip audio)
     {
-        musicSource.PlayOneShot(transition);
+        musicSource.loop = false;
+        musicSource.clip = transition;
+        musicSource.Play();
         yield return new WaitForSeconds(9.6f);
-        musicSource.PlayOneShot(audio);
+        musicSource.clip = audio;
+        musicSource.Play();
+        musicSource.loop = true;
     }
 
     private void StopMusic()

@@ -103,3 +103,5 @@ MonoBehaviour:
   - {fileID: -1243433014, guid: de704f75d4b1c9141a3ead9a7918751e, type: 3}
   - {fileID: -847126911, guid: de704f75d4b1c9141a3ead9a7918751e, type: 3}
   - {fileID: 740639086, guid: de704f75d4b1c9141a3ead9a7918751e, type: 3}
+  audioSource: {fileID: 0}
+  pickupSFX: {fileID: 8300000, guid: 985feed139f01d841b5d261336b2280a, type: 3}
