@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public float speed;
     public float jumpForce;
     public float raycastLength = 0.84f;
+    public float sideLength = 0.2f;
 
     private Rigidbody2D rb2d;
     private SpriteRenderer spriteRenderer;
@@ -39,11 +40,12 @@ public class PlayerMovement : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         isPaused = false;
         pauseMenu.SetActive(false);
-}
+    }
 
     // Update is called once per frame
     void Update()
     {
+
         /*
         if player swaps instrument, change currentInstrument
 
@@ -51,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
         inventory[1] is guitar    (2)
         inventory[2] is flute     (3)
         inventory[3] is drums     (4)
-         */ 
+         */
         if (Input.GetKeyDown(KeyCode.Alpha1) && PlayerInstrument.inventory[0] == true && swapped == false && PlayerInstrument.currentInstrument != Instrument.Piano)
         {
             swapped = true;
@@ -80,21 +82,13 @@ public class PlayerMovement : MonoBehaviour
             pauseMenu.SetActive(isPaused);
         }
 
-        // Check if the player is grounded, update isGrounded
-
-        RaycastHit2D groundCheckHit = Physics2D.Raycast(transform.position, Vector2.down, raycastLength, platformLayerMask);
-        if (groundCheckHit.collider != null)
-        {
-            isGrounded = true;
-        }
-        else
-        {
-            isGrounded = false;
-        }
-
         // Jumping and horizontal movement
 
+        float horizontalInput = Input.GetAxis("Horizontal");
         Vector2 vel = rb2d.velocity;
+        vel.x = horizontalInput * speed;
+        isGrounded = IsGrounded();
+        isRunning = Mathf.Abs(horizontalInput) > 0.02;
 
         //Check if game is paused
 
@@ -118,7 +112,7 @@ public class PlayerMovement : MonoBehaviour
                             vel.y = jumpForce;  // Normal jump
                             audioSource.PlayOneShot(jumpSFX[UnityEngine.Random.Range(0, 2)]);
                             jumpCount++;
-                    
+
                         }
                     }
                     else
@@ -135,13 +129,13 @@ public class PlayerMovement : MonoBehaviour
         }
         // Animator logic
 
-        if (Mathf.Abs(vel.x) > 0.01 && isGrounded)
+        if (isRunning && isGrounded)
         {
-            isRunning = true;
+            animator.SetBool("isWalking", true);
         }
         else
         {
-            isRunning = false;
+            animator.SetBool("isWalking", false);
         }
 
         if (vel.y > 0.01)
@@ -162,30 +156,13 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("isFalling", false);
         }
 
-        if (isRunning && isGrounded)
-        {
-            animator.SetBool("isWalking", true);
-        }
-        else if (isRunning && !isGrounded)
-        {
-            animator.SetBool("isWalking", false);
-        }
-        else if (!isRunning && isGrounded)
-        {
-            animator.SetBool("isWalking", false);
-        }
-        else
-        {
-            animator.SetBool("isWalking", false);
-        }
-        
         // Flip X depending on which direction the player is moving
 
-        if (vel.x > 0.01)
+        if (horizontalInput > 0.01)
         {
             spriteRenderer.flipX = false;
         }
-        else if (vel.x < -0.01)
+        else if (horizontalInput< -0.01)
         {
             spriteRenderer.flipX = true;
         }
@@ -196,5 +173,30 @@ public class PlayerMovement : MonoBehaviour
         //{
         //    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         //}
+    }
+
+    // Check if the player is grounded, update isGrounded
+    public bool IsGrounded()
+    {
+        // Calculate the raycast origin at the character's feet
+        Vector3 raycastOrigin = transform.position;
+        raycastOrigin.y -= raycastLength; // Adjust this value based on your character's size
+
+        Vector3 rayStartLeft = raycastOrigin;
+        rayStartLeft.x -= sideLength;
+        Vector3 rayStartRight = raycastOrigin;
+        rayStartRight.x += sideLength;
+
+        RaycastHit2D hitLeft = Physics2D.Raycast(rayStartLeft, Vector2.down, 0.1f, platformLayerMask);
+        RaycastHit2D hitRight = Physics2D.Raycast(rayStartRight, Vector2.down, 0.1f, platformLayerMask);
+
+        if (hitLeft.collider != null || hitRight.collider != null)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }

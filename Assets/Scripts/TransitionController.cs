@@ -10,7 +10,7 @@ public class TransitionController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        animator.SetInteger("Transition", 1);
+        animator.SetInteger("Transition", 0);
     }
 
     // Update is called once per frame

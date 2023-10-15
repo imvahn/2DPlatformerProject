@@ -19,7 +19,7 @@ public class ButtonController : MonoBehaviour
 
     public void LoadGameScene1()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 
     public void QuitGame()

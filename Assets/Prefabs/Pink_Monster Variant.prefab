@@ -81,8 +81,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5318013297146979442, guid: b8772d1169e1a45e3b5a2b29e0fcafbd, type: 3}
+      propertyPath: m_Size.x
+      value: 0.8805313
+      objectReference: {fileID: 0}
+    - target: {fileID: 5318013297146979442, guid: b8772d1169e1a45e3b5a2b29e0fcafbd, type: 3}
+      propertyPath: m_Size.y
+      value: 1.4282737
+      objectReference: {fileID: 0}
+    - target: {fileID: 5318013297146979442, guid: b8772d1169e1a45e3b5a2b29e0fcafbd, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5318013297146979442, guid: b8772d1169e1a45e3b5a2b29e0fcafbd, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.022396564
+      objectReference: {fileID: 0}
+    - target: {fileID: 5318013297146979442, guid: b8772d1169e1a45e3b5a2b29e0fcafbd, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.095395684
       objectReference: {fileID: 0}
     - target: {fileID: 7638919101484642094, guid: b8772d1169e1a45e3b5a2b29e0fcafbd, type: 3}
       propertyPath: pinkGuy
@@ -171,7 +187,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 395988692469168994}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
