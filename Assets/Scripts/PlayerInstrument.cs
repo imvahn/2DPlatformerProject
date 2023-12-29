@@ -19,6 +19,8 @@ public class PlayerInstrument : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Empty the inventory
+        EmptyInventory();
         // default starting instrument is currently piano
         currentInstrument = Instrument.Piano;
         inventory[0] = true;
